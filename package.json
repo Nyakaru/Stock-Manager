@@ -1,0 +1,39 @@
+{
+  "name": "stock-manager",
+  "version": "1.0.0",
+  "description": "A Node.js RESTful API (Simple store API)",
+  "main": "src",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nyakaru/Stock-Manager.git"
+  },
+  "keywords": [
+    "Node",
+    "RESTful",
+    "API"
+  ],
+  "author": "Kinara Nyakaru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nyakaru/Stock-Manager/issues"
+  },
+  "homepage": "https://github.com/Nyakaru/Stock-Manager#readme",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.4",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
