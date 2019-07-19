@@ -2,16 +2,15 @@ import express from 'express';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import route from './routes/index';
 
 require('dotenv').config();
 const app = express();
 
-import productRoutes from './routes/products';
-import orderRoutes from './routes/orders';
-
 mongoose.connect('mongodb+srv://kinara:' + process.env.DB_PWD + '@stock-manager-bha5c.mongodb.net/test?retryWrites=true&w=majority');
 
 app.use(morgan('dev'));
+app.use('/uploads' ,express.static('uploads'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
@@ -26,11 +25,10 @@ app.use((req,res,next) => {
     next();
 });
 
-app.use('/products', productRoutes);
-app.use('/orders', orderRoutes);
+route(app);
 
 app.use((req, res, next) => {
-    const error = new Error('Not found');
+    const error = new Error('Please use /api/v1/<specific resource> to acess the API');
     error.status = 404;
     next(error);
 })
