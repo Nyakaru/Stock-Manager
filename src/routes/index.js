@@ -1,11 +1,13 @@
 import productRoutes from './products';
 import orderRoutes from './orders';
+import userRoutes from './users';
 
 const apiPrefix = '/api/v1';
 
 const routes = [
   productRoutes,
-  orderRoutes
+  orderRoutes,
+  userRoutes
 ];
 
 export default app => {
